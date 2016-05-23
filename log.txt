@@ -159,3 +159,69 @@
 2016-04-26 12:10:16.506| Saving deconvolved image stack to .png files....
 2016-04-26 12:15:46.622| Deconvolved image stack written to file
 2016-04-26 12:15:46.630| Saving restored data cube to C:\decon\15MarOxfordBeads\Airy 1.1mm A14 2mm-back-aper stepSize200nm\MMStack_Pos0.ome.mat...
+2016-05-19 11:05:51.825| CRC failed.
+2016-05-19 11:06:13.362| CRC failed.
+2016-05-19 11:25:23.773| CRC failed.
+2016-05-19 11:25:35.008| Lens is driven in Analog mode
+2016-05-20 10:44:28.792| Lens set to Current Mode succesfully
+2016-05-20 10:44:40.664| Lens set to Focal Power Mode succesfully
+2016-05-20 10:44:46.086| Lens set to Analog Mode succesfully
+2016-05-20 10:44:51.612| Lens set to Triangular Signal Mode succesfully
+2016-05-20 10:44:58.927| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 10:45:11.721| Lens set to Rectangular Signal Mode succesfully
+2016-05-20 10:45:28.376| Lens set to Current Mode succesfully
+2016-05-20 11:49:24.978| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 11:56:22.150| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 11:59:49.633| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 12:10:25.379| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 12:12:23.104| CRC failed.
+2016-05-20 12:12:35.271| CRC failed.
+2016-05-20 12:12:49.694| CRC failed.
+2016-05-20 12:13:15.112| CRC failed.
+2016-05-20 12:13:15.124| CRC failed.
+2016-05-20 12:14:35.632| CRC failed.
+2016-05-20 12:14:55.566| CRC failed.
+2016-05-20 12:19:53.798| CRC failed.
+2016-05-20 12:27:58.059| CRC failed.
+2016-05-20 12:27:58.066| Error occurred when getting modeUpperCurrent
+2016-05-20 12:27:58.076| CRC failed.
+2016-05-20 12:27:58.081| Error occurred when setting modeLowerCurrent
+2016-05-20 12:27:58.115| CRC failed.
+2016-05-20 12:27:58.119| Error occurred when getting modeLowerCurrent
+2016-05-20 12:33:45.636| CRC failed.
+2016-05-20 12:33:45.641| Error occurred when setting modeUpperCurrent
+2016-05-20 12:33:45.650| CRC failed.
+2016-05-20 12:33:45.654| Error occurred when getting modeUpperCurrent
+2016-05-20 12:34:04.202| CRC failed.
+2016-05-20 12:34:04.206| Error occurred when setting modeUpperCurrent
+2016-05-20 12:34:04.214| CRC failed.
+2016-05-20 12:34:04.218| Error occurred when getting modeUpperCurrent
+2016-05-20 12:34:25.861| CRC failed.
+2016-05-20 12:34:25.865| Error occurred when getting modeUpperCurrent
+2016-05-20 12:34:25.870| CRC failed.
+2016-05-20 12:34:25.874| Error occurred when setting modeLowerCurrent
+2016-05-20 12:34:25.910| CRC failed.
+2016-05-20 12:34:25.913| Error occurred when getting modeLowerCurrent
+2016-05-20 12:34:38.841| CRC failed.
+2016-05-20 12:34:38.844| Error occurred when setting modeUpperCurrent
+2016-05-20 12:34:38.877| CRC failed.
+2016-05-20 12:34:38.881| Error occurred when getting modeUpperCurrent
+2016-05-20 12:36:35.171| CRC failed.
+2016-05-20 12:36:35.179| Error occurred when setting modeUpperCurrent
+2016-05-20 12:36:35.200| CRC failed.
+2016-05-20 12:36:35.205| Error occurred when getting modeUpperCurrent
+2016-05-20 12:37:01.208| CRC failed.
+2016-05-20 12:37:01.213| Error occurred when getting modeLowerCurrent
+2016-05-20 12:37:16.370| CRC failed.
+2016-05-20 12:37:16.374| Error occurred when setting modeUpperCurrent
+2016-05-20 12:37:16.384| CRC failed.
+2016-05-20 12:37:16.389| Error occurred when getting modeUpperCurrent
+2016-05-20 12:37:29.792| CRC failed.
+2016-05-20 12:37:29.796| Error occurred when setting modeUpperCurrent
+2016-05-20 12:37:52.808| The current should be between 0 and 2.928400e+02 mA
+2016-05-20 12:39:34.816| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 12:40:12.960| Lens set to Current Mode succesfully
+2016-05-20 12:45:50.609| The current should be between 0 and 2.93e+02 mA
+2016-05-20 12:46:20.856| The current should be between 0 and 292.84 mA
+2016-05-20 12:46:38.037| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-20 12:46:44.674| Lens set to Current Mode succesfully
