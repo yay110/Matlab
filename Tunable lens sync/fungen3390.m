@@ -29,14 +29,20 @@ fopen(obj1);
 %% Communicating with instrument object, obj1.
 
 %Sin function with the amplitude and offset
-fprintf(obj1, 'APPL:SIN 5 KHZ, 3.0 VPP, -2.5 V');
-% DC with 0.3V amplitude
-fprintf(obj1, 'APPL:DC 10 KHZ,  3 VPP, 0.3 V');
-% Ramp function with amplitude 3V, offset -2.5V and 100% symmetry
-fprintf(obj1, 'APPL:RAMP 5 KHZ, 3.0 VPP, -2.5 V');
-fprintf(obj1, 'FUNCTION:RAMP:SYMMETRY 100');
+fprintf(obj1, 'APPL:SIN 30 HZ, 5.0 VPP, 2.5V');
+fprintf(obj1, 'BURST:MODE TRIGGERED;NCYCLES INF;PHASE 0');
+fprintf(obj1, 'TRIGGER:SOURCE EXT');
+fprintf(obj1, 'BURST:STATE ON');
 
-fprintf(obj1, 'OUTPUT OFF');
+
+
+% % DC with 0.3V amplitude
+% fprintf(obj1, 'APPL:DC 10 KHZ,  3 VPP, 0.3 V');
+% % Ramp function with amplitude 3V, offset -2.5V and 100% symmetry
+% fprintf(obj1, 'APPL:RAMP 5 KHZ, 3.0 VPP, -2.5 V');
+% fprintf(obj1, 'FUNCTION:RAMP:SYMMETRY 100');
+% 
+% fprintf(obj1, 'OUTPUT OFF');
 
 
 

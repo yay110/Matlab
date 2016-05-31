@@ -1,0 +1,2 @@
+2016-05-31 11:49:35.421| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-31 11:51:19.506| Lens set to Sinusoidal Signal Mode succesfully
