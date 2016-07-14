@@ -1,5 +1,5 @@
-pixels = 256;
-signalFrequency = 5;
+pixels = 1024;
+signalFrequency = 1;
 
 %% initialisation
 
@@ -15,7 +15,7 @@ src.ExposureTime = 0.01/2048*pixels; %in seconds
 
 % each trigger will include 2 full cycle, i.e. four volumes of images
 nrCycles = 2;
-vid.FramesPerTrigger=1/signalFrequency/src.ExposureTime*nrCylces;
+vid.FramesPerTrigger=1/signalFrequency/src.ExposureTime*nrCycles;
 %vid.TriggerRepeat=Inf;
 
 
@@ -24,7 +24,7 @@ newFrames = frames;
 
 disp('Camera Ready');
 
-offsetFrame = 9 ;
+offsetFrame = 0 ;
 xRange = (1:pixels);
 yRange = (1:pixels);
 zRange = cumsum(abs([0,diff(sin(((1-offsetFrame):(vid.FramesPerTrigger-offsetFrame))*(2*nrCycles*pi/vid.FramesPerTrigger)))]));
