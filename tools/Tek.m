@@ -9,14 +9,14 @@ classdef Tek < handle
     
     properties
         target;
-        output = 'On';
-        mode = 'Sin';
-        frequency = 10;
-        amplitude = 0.073;      %Unit V;
-        offset    = 0.106;      %Unit V;
-        phaseOffset = 90;   %Unit deg
-        burstCycles = 2;
-        %     burst = 'off';
+        output;
+        mode;
+        frequency;
+        amplitude;      %Unit V;
+        offset;         %Unit V;
+        phaseOffset;    %Unit deg
+        burstCycles;
+        burst;
     end
     
     methods
@@ -86,12 +86,12 @@ classdef Tek < handle
         %Burst mode related function
         function Tek = burstOn(Tek)
             fprintf(Tek.target, 'SOURCE1:BURST:STATE ON');
-            %          Tek.burst = 'On';
+                      Tek.burst = 'On';
         end
         
         function Tek = burstOff(Tek)
             fprintf(Tek.target, 'SOURCE1:BURST:STATE OFF');
-            %          Tek.burst = 'Off';
+                      Tek.burst = 'Off';
         end
         
         function Tek = set.burstCycles(Tek,n)
@@ -105,6 +105,11 @@ classdef Tek < handle
         % the programmer manual.
         % need to contact the company to add it. 
         
+        
+        %% This function is needed to scan the function generator according
+        %  to tunable lens
+        % The values needs to be calibrated for each system, for each
+        % frequency.
         function Tek = scan(Tek,n)
             Tek.burstOn;
             Tek.frequency = n;
