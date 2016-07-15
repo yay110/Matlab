@@ -116,7 +116,7 @@ classdef Tek < handle
             Tek.burstCycles = 1;
             switch n
                 case 10
-                    Tek.offset = 0.106;                    
+                    Tek.offset = 0.104;                    
                     Tek.amplitude = 0.073;
                     Tek.burstCycles = 50;
                 case 20
