@@ -116,36 +116,45 @@ classdef Tek < handle
             Tek.burstCycles = 1;
             switch n
                 case 10
-                    Tek.offset = 0.104;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.074;
                     Tek.burstCycles = 50;
+                    disp('Angle is 88 deg');
                 case 20
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.074;
+                    disp('Angle is 86 deg');
                 case 25
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.103;                    
+                    Tek.amplitude = 0.074;
+                    disp('Angle is 85 deg');
                 case 30
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.103;                    
+                    Tek.amplitude = 0.076;
+                    disp('Angle is 83 deg');
                 case 50
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.081;
+                    disp('Angle is 81 deg');
                 case 80
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.104;
+                    disp('Angle is 72 deg');
                 case 200
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.101;                    
+                    Tek.amplitude = 0.110;
+                    disp('Angle is -26 deg');
                 case 250
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.100;                    
+                    Tek.amplitude = 0.082;
+                    disp('Angle is -38 deg');
                 case 300
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.068;
+                    disp('Angle is -50 deg');
                 case 320
-                    Tek.offset = 0.106;                    
-                    Tek.amplitude = 0.073;
+                    Tek.offset = ;                    
+                    Tek.amplitude = ;
                 otherwise
                     disp('This frequency is not calibrated!');
             end
