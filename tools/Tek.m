@@ -14,9 +14,7 @@ classdef Tek
         frequency = 10;
         amplitude = 0;      %Unit V;
         offset    = 0;      %Unit V;
-        phaseOffset = 90;   %Unit degree
-        
-        
+        phaseOffset = 90;   %Unit degree             
     end
     
     methods

@@ -225,3 +225,8 @@
 2016-05-20 12:46:20.856| The current should be between 0 and 292.84 mA
 2016-05-20 12:46:38.037| Lens set to Sinusoidal Signal Mode succesfully
 2016-05-20 12:46:44.674| Lens set to Current Mode succesfully
+2016-07-15 17:36:47.700| Lens set to Current Mode succesfully
+2016-07-15 17:57:06.088| Lens set to Sinusoidal Signal Mode succesfully
+2016-07-15 17:58:28.835| Lens set to Current Mode succesfully
+2016-07-15 17:59:39.541| Lens set to Sinusoidal Signal Mode succesfully
+2016-07-15 18:00:19.972| Lens set to Current Mode succesfully
