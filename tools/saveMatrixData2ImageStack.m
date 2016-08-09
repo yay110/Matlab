@@ -70,16 +70,16 @@ end
 %                         dataMax=max(dataCube(:));
 %                         mkdir(outputFolder);
 
-dataMax=max(dataCube(:));
+% dataMax=max(dataCube(:));
 
 %Write images of each designated
 %data cube's XY slices to
 %appropriate folder
 for imageNo=1:size(dataCube,3)
     outputFullFileName=strcat(outputFolder,'\','Image_',num2str(10000+imageNo),'.tiff');
-    outputImage=double(squeeze(dataCube(:,:,imageNo)));
+    outputImage=squeeze(dataCube(:,:,imageNo));
     %outputImage=outputImage.*uint16(outputImage>0);
-    outputImage=outputImage./double(dataMax);
+%     outputImage=outputImage./double(dataMax);
     imwrite(outputImage,outputFullFileName,'tiff','Compression','none');
 end
 % clear dataCube
