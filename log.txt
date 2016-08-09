@@ -225,6 +225,7 @@
 2016-05-20 12:46:20.856| The current should be between 0 and 292.84 mA
 2016-05-20 12:46:38.037| Lens set to Sinusoidal Signal Mode succesfully
 2016-05-20 12:46:44.674| Lens set to Current Mode succesfully
+<<<<<<< HEAD
 2016-05-31 12:23:05.344| Lens set to Sinusoidal Signal Mode succesfully
 2016-05-31 12:23:27.943| Lens set to Current Mode succesfully
 2016-05-31 12:24:47.119| Lens set to Sinusoidal Signal Mode succesfully
@@ -512,3 +513,12 @@
 2016-08-05 14:06:26.264| Deconvolved image stack written to file
 2016-08-05 14:06:56.972| Saving deconvolved image stack to .png files....
 2016-08-05 14:07:12.523| Deconvolved image stack written to file
+=======
+2016-07-15 17:36:47.700| Lens set to Current Mode succesfully
+2016-07-15 17:57:06.088| Lens set to Sinusoidal Signal Mode succesfully
+2016-07-15 17:58:28.835| Lens set to Current Mode succesfully
+2016-07-15 17:59:39.541| Lens set to Sinusoidal Signal Mode succesfully
+2016-07-15 18:00:19.972| Lens set to Current Mode succesfully
+2016-08-08 17:09:57.376| Image stack written to file
+2016-08-08 17:10:59.614| Image stack written to file
+>>>>>>> origin/master

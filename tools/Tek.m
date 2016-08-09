@@ -10,6 +10,13 @@ classdef Tek < handle
     properties
         target;
         output;
+<<<<<<< HEAD
+        mode = 1;
+        frequency = 10;
+        amplitude = 0;      %Unit V;
+        offset    = 0;      %Unit V;
+        phaseOffset = 90;   %Unit degree             
+=======
         mode;
         frequency;
         amplitude;      %Unit V;
@@ -17,6 +24,7 @@ classdef Tek < handle
         phaseOffset;    %Unit deg
         burstCycles;
         burst;
+>>>>>>> origin/master
     end
     
     methods
