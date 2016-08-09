@@ -1,2 +1,22 @@
 2016-05-31 11:49:35.421| Lens set to Sinusoidal Signal Mode succesfully
 2016-05-31 11:51:19.506| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-31 12:13:24.302| Lens set to Sinusoidal Signal Mode succesfully
+2016-05-31 12:15:00.455| Lens set to Current Mode succesfully
+2016-06-23 15:36:05.571| Lens set to Sinusoidal Signal Mode succesfully
+2016-06-23 15:36:40.718| Lens set to Current Mode succesfully
+2016-06-23 15:38:55.430| Lens set to Sinusoidal Signal Mode succesfully
+2016-06-23 15:40:02.980| Lens set to Current Mode succesfully
+2016-06-23 15:40:39.096| Lens set to Sinusoidal Signal Mode succesfully
+2016-06-23 15:40:46.838| Lens set to Current Mode succesfully
+2016-06-23 15:40:46.868| Lens set to Current Mode succesfully
+2016-06-23 15:41:28.328| Lens set to Current Mode succesfully
+2016-06-23 15:43:39.525| Lens set to Current Mode succesfully
+2016-06-23 15:44:16.797| Lens set to Sinusoidal Signal Mode succesfully
+2016-06-23 15:44:24.754| Lens set to Current Mode succesfully
+2016-06-23 15:44:24.782| Lens set to Current Mode succesfully
+2016-06-23 16:17:07.532| Lens set to Triangular Signal Mode succesfully
+2016-06-23 16:17:17.825| Lens set to Current Mode succesfully
+2016-06-23 16:17:17.865| Lens set to Current Mode succesfully
+2016-06-23 16:19:32.953| Lens set to Sinusoidal Signal Mode succesfully
+2016-06-23 16:19:40.839| Lens set to Current Mode succesfully
+2016-06-23 16:19:40.896| Lens set to Current Mode succesfully
