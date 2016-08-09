@@ -1,4 +1,4 @@
-classdef Tek
+classdef Tek < handle
     
     % FunGenTek class is designed to control the Tektronix AFG1000 seris
     % function generator. AFG1022 is the model we have.
@@ -10,11 +10,21 @@ classdef Tek
     properties
         target;
         output;
+<<<<<<< HEAD
         mode = 1;
         frequency = 10;
         amplitude = 0;      %Unit V;
         offset    = 0;      %Unit V;
         phaseOffset = 90;   %Unit degree             
+=======
+        mode;
+        frequency;
+        amplitude;      %Unit V;
+        offset;         %Unit V;
+        phaseOffset;    %Unit deg
+        burstCycles;
+        burst;
+>>>>>>> origin/master
     end
     
     methods
@@ -33,6 +43,7 @@ classdef Tek
             % Connect to instrument object, obj1.
             fopen(Tek.target);
             
+            Tek.mode = 1;
         end
         
         % basic function such as choosing mode, change frequency, amplitude
@@ -41,38 +52,122 @@ classdef Tek
             switch n
                 case 1
                     fprintf(Tek.target, 'Source1:FUNCTION:SHAPE SIN');
+                    Tek.mode = 'Sin';
                 case 2
                     fprintf(Tek.target, 'Source1:FUNCTION:SHAPE SQUARE');
+                    Tek.mode = 'Squre';
                 case 3
                     fprintf(Tek.target, 'Source1:FUNCTION:SHAPE Ramp');
+                    Tek.mode = 'Ramp';
                 case 4
                     fprintf(Tek.target, 'Source1:FUNCTION:SHAPE Pulse');
+                    Tek.mode = 'Pulse';
             end
         end
         
         function Tek = set.frequency(Tek,n)
             fprintf(Tek.target, ['SOURCE1:FREQUENCY ', num2str(n), 'HZ']);
+            Tek.frequency = n;
         end
         
         function Tek = set.amplitude(Tek,n)
             fprintf(Tek.target,['SOURCE1:VOLTAGE:AMPLITUDE ',num2str(n),'VPP']);
+            Tek.amplitude = n;
         end
         
         function Tek = set.offset(Tek,n)
             fprintf(Tek.target,['SOURCE1:VOLTAGE:OFFSET ',num2str(n),'V']);
+            Tek.offset = n;
         end
         
         % Output status of source1
         function Tek = outputOn(Tek)
             fprintf(Tek.target, 'OUTPUT1:STATE ON');
+            Tek.output = 'On';
         end
         
         function Tek = outputOff(Tek)
             fprintf(Tek.target, 'OUTPUT1:STATE OFF');
+            Tek.output = 'Off';
         end
         
         %Burst mode related function
+        function Tek = burstOn(Tek)
+            fprintf(Tek.target, 'SOURCE1:BURST:STATE ON');
+                      Tek.burst = 'On';
+        end
         
+        function Tek = burstOff(Tek)
+            fprintf(Tek.target, 'SOURCE1:BURST:STATE OFF');
+                      Tek.burst = 'Off';
+        end
+        
+        function Tek = set.burstCycles(Tek,n)
+            fprintf(Tek.target, ['SOURCE1:BURST:ncycles ',num2str(n)]);
+            Tek.burstCycles = n;
+        end
+        
+        %important function needed!!!!!
+        % change the relative phase for the burst mode
+        % this function is not added because there is no mention of it on
+        % the programmer manual.
+        % need to contact the company to add it. 
+        
+        
+        %% This function is needed to scan the function generator according
+        %  to tunable lens
+        % The values needs to be calibrated for each system, for each
+        % frequency.
+        function Tek = scan(Tek,n)
+            Tek.burstOn;
+            Tek.frequency = n;
+            Tek.burstCycles = 1;
+            switch n
+                case 10
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.074;
+                    Tek.burstCycles = 50;
+                    disp('Angle is 88 deg');
+                case 20
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.074;
+                    disp('Angle is 86 deg');
+                case 25
+                    Tek.offset = 0.103;                    
+                    Tek.amplitude = 0.074;
+                    disp('Angle is 85 deg');
+                case 30
+                    Tek.offset = 0.103;                    
+                    Tek.amplitude = 0.076;
+                    disp('Angle is 83 deg');
+                case 50
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.081;
+                    disp('Angle is 81 deg');
+                case 80
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.104;
+                    disp('Angle is 72 deg');
+                case 200
+                    Tek.offset = 0.101;                    
+                    Tek.amplitude = 0.110;
+                    disp('Angle is -26 deg');
+                case 250
+                    Tek.offset = 0.100;                    
+                    Tek.amplitude = 0.082;
+                    disp('Angle is -38 deg');
+                case 300
+                    Tek.offset = 0.102;                    
+                    Tek.amplitude = 0.068;
+                    disp('Angle is -50 deg');
+                case 320
+                    Tek.offset = ;                    
+                    Tek.amplitude = ;
+                otherwise
+                    disp('This frequency is not calibrated!');
+            end
+            Tek.outputOn;
+        end
         
     end
     

@@ -230,3 +230,5 @@
 2016-07-15 17:58:28.835| Lens set to Current Mode succesfully
 2016-07-15 17:59:39.541| Lens set to Sinusoidal Signal Mode succesfully
 2016-07-15 18:00:19.972| Lens set to Current Mode succesfully
+2016-08-08 17:09:57.376| Image stack written to file
+2016-08-08 17:10:59.614| Image stack written to file
