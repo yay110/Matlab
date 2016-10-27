@@ -1,12 +1,12 @@
 %Give the folder name and the file name of the images, it then go through
 %the beads, find the best focucsed ones, average them and do Gaussian
-%fitting. 
+%fitting.
 
-% Created by Zhengyi Yang on 29th August 2016. 
+% Created by Zhengyi Yang on 29th August 2016.
 
 folderName = 'f:\Acoustic trapping paper related\resolution optimization';
 
-for n = 37%[36:43,46,47]
+for n = [46,37,38,40]%[36:43,46,47]
     FOV = 580;
     pixelSize = 580/2048;
     
@@ -20,15 +20,15 @@ for n = 37%[36:43,46,47]
     resultNumber = size(beadCoordinate);
     beadCoordinate = reshape(beadCoordinate, 2, resultNumber(1)/2);
     
-%     figure;
-%     h(1) = subplot(1,2,1);imagesc(img);axis image;
-%     h(2) = subplot(1,2,2);imagesc(img);axis image;
-%     hold;
-%     plot(beadCoordinate(1,:),beadCoordinate(2,:),'r*');axis image;
-%     plot(108,580,'ro')
-%     
-%     hold;
-%     linkaxes(h);
+    %     figure;
+    %     h(1) = subplot(1,2,1);imagesc(img);axis image;
+    %     h(2) = subplot(1,2,2);imagesc(img);axis image;
+    %     hold;
+    %     plot(beadCoordinate(1,:),beadCoordinate(2,:),'r*');axis image;
+    %     plot(108,580,'ro')
+    %
+    %     hold;
+    %     linkaxes(h);
     
     
     for i = 1:length(beadCoordinate(2,:))
@@ -52,18 +52,31 @@ for n = 37%[36:43,46,47]
     %sort the beads according to the quality of focus (numbers above 0.5)
     [sorted_x,index] = sort(beadCoordinate(3,:),'ascend');
     %average numbers of beads profile;
-    beadNumber = 10;
+    beadNumber = 20;
     sumProfile = sum(beadProfiles(:,index(1:beadNumber)),2)/beadNumber;
     
     % fit the sumProfile to a Gaussian function
     x=pixelSize/5:pixelSize/5:51*pixelSize/5;
+    x = x-51*pixelSize/5/2;
     f = fit(x',sumProfile,'gauss1');
     resolution(n) = 2*f.c1*sqrt(log(2));
     
-    figure;
+    h = figure;
     plot(f,x,sumProfile);
-    xlabel('Microns');ylabel('Normalized intensity');
-    title(['The resolution is ', num2str(resolution(n)),' microns']);
+    xlabel('\mum');ylabel('Normalized intensity');
+    str = sprintf('FWHM is %.2f ',resolution(n));
+    title(strcat(str,'\mum'));
+    %     title(['The resolution is ', num2str(resolution(n)),' \mum']);
+    
+    %      set(0,'DefaultAxesFontSize', 14)
+    %      axes('FontSize',24);
+    set(findall(gcf,'type','text'),'FontSize',25)
+    figureName = strcat(folderName, '\Image000',num2str(n));
+    AX=legend('Raw data','Fitted curve');
+    AX.FontSize = 20;
+    saveas(h,figureName,'svg');
+    saveas(h,figureName,'png');
+    
     
     %     resolution2 = 2.355*f.c1/sqrt(2);
 end
