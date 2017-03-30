@@ -10,8 +10,8 @@
 % Created by Zhengyi Yang (zy6@st-andrews.ac.uk) on 15/07/2016
 
 pixels = 256;
-signalFrequency = 10;
-interpolated =1;
+signalFrequency = 2;
+interpolated =0;
 nrFigures = 1;
 
 %% initialisation
