@@ -15,9 +15,11 @@
 % confirmation when processed image. 
 
 clear;
-load('C:\Users\Zhengyi\OneDrive\Zebrafish heart beat profile\3.4 extractedProfileFromMaxIntensityRegion.mat')
+mysnuggle=getenv('USERPROFILE');
+load(strcat(mysnuggle,'\OneDrive\Zebrafish heart beat profile\1.2 extractedProfileFromMaxIntensityRegion.mat'));
 
 for n = 1:size(profile,1)
     plot(profile(n,:));
-    pause(0.1);
+    title(num2str(n));
+    pause(0.5);
 end
