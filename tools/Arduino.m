@@ -14,7 +14,7 @@ classdef Arduino < handle
     methods
         function board = Arduino(port)
             if nargin < 1
-                board.port = 'COM17';
+                board.port = 'COM7';
             else
                 board.port = port;
             end
