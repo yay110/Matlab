@@ -21,11 +21,11 @@ ROIPosition = [(2048-pixels)/2 (2048-pixels)/2 pixels pixels];
 
 
 %define number of stacks to take and
-nrStacks =52;               % numbers of image stacks to take, with the following
+nrStacks =16;               % numbers of image stacks to take, with the following
 % stackInterval to determine how long in total.
 stackInterval = 1;          % Unit minutes
 stackLength = 0.25;           %Unit minutes
-folderName = 'F:\2017-05-11 Verapaamil\5th sample\3. washing away drug';
+folderName = 'F:\2017-06-12 Verapaamil 5day old\sample 1\1. before drug';
 
 
 %% pump / Arduino board initialization
@@ -99,14 +99,14 @@ for i = 1:nrStacks
     P1(:) = P2(1:L/2+1);
     P1(2:end-1) = 2*P1(2:end-1);
     f = scanningFrequency*(0:(L/2))/L;
-    peaks = findpeaks(P1(10:end));
+    peaks = findpeaks(P1(10:60));
     beatFrequency(i) = f(find(P1(:)==max(peaks)))
     normP1 = P1/max(peaks);
     
     subplot(2,3,3)
     plot(f, normP1);
     title(num2str(beatFrequency(i)));
-    xlim([0 6]);
+    xlim([0 3]);
      ylim([0 1]);
      
      subplot(2,3,6)
@@ -114,8 +114,9 @@ for i = 1:nrStacks
      xlim([0 nrStacks]);
      ylim([0 4])
     
-    saveas(h,strcat(fileName,'.tiff'),'tiff');    %show the projection and save the projection;
-    
+    saveas(h,strcat(fileName,'-',num2str(i),'.tiff'),'tiff');    %show the projection and save the projection;
+    saveas(h,strcat(fileName,'-',num2str(i),'.fig'),'fig');    %show the projection and save the projection;
+
     
     i
     elapsedTime(i) = toc;
