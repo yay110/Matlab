@@ -12,8 +12,10 @@ dataFolder(8).name = 'E:\2017-03-29 Zebrafish heartbeat\8th sample\1.before drug
 dataFolder(9).name = 'E:\2017-03-29 Zebrafish heartbeat\8th sample\2. adding to 320mgL';
 dataFolder(10).name = 'E:\2017-03-29 Zebrafish heartbeat\8th sample\3. adding to 500mgL';
 dataFolder(11).name = 'E:\2017-03-29 Zebrafish heartbeat\8th sample\4. washing away';
+dataFolder(12).name = 'E:\2017-03-31 Zebrafish heartbeat control\2nd control sample without any drug';
 
-for folder = 5:7%:length(dataFolder)
+
+for folder = 12%:length(dataFolder)
     clear profile;
     folderName = dataFolder(folder).name
     
@@ -34,14 +36,14 @@ for folder = 5:7%:length(dataFolder)
 %     profile = zeros(length(subFolderNames),sectionNumber,frameNumber);
     
     for nn = 1:length(subFolderNames) 
-        
+        nn
         cd(subFolderNames(1).name)
         fileName = dir('**.tif*');        
         sectionNumber = ceil(length(fileName)/(frameNumber));
 
         %read the images          
         for n=1:sectionNumber
-            n/sectionNumber
+            
             % read the first frame
             firstFrame = imread(strcat(subFolderNames(nn).name,'\',fileName((n-1)*frameNumber+1).name));
             % find maxima on the frame
@@ -54,9 +56,9 @@ for folder = 5:7%:length(dataFolder)
                     break
                 end
                 profile(nn,n,m) = sum(sum(currentFrame(x-50:x,y-50:y)));
-                %                 profile1(nn,n,m) = sum(sum(currentFrame(x-50:x,y:y+50)));
-                %                 profile2(nn,n,m) = sum(sum(currentFrame(x:x+50,y-50:y)));
-                %                 profile3(nn,n,m) = sum(sum(currentFrame(x:x+50,y:y+50)));
+                profile1(nn,n,m) = sum(sum(currentFrame(x-50:x,y:y+50)));
+                profile2(nn,n,m) = sum(sum(currentFrame(x:x+50,y-50:y)));
+                profile3(nn,n,m) = sum(sum(currentFrame(x:x+50,y:y+50)));
                 %                 [x y] = find(currentFrame ==max(currentFrame(:)));
                 %                 profile4(nn,n,m) = x(1);
                 %                 profile5(nn,n,m) = y(1);
@@ -65,13 +67,17 @@ for folder = 5:7%:length(dataFolder)
     end
     
     profile = squeeze(profile);
+    profile1 = squeeze(profile1);
+    profile2 = squeeze(profile2);
+    profile3 = squeeze(profile3);
+
     %     profile1 = squeeze(profile1);
     %     profile2 = squeeze(profile2);
     %     profile3 = squeeze(profile3);
     %     profile4 = squeeze(profile4);
     %     profile5 = squeeze(profile5);
     
-    save(strcat(folderName,'\extractedProfileFromMaxIntensityRegion'));
+    save(strcat(folderName,'\extractedProfileFromMaxIntensityRegion2'));
     
 end
 

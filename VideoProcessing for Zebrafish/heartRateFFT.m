@@ -1,9 +1,12 @@
-clear;
+% clear;
 mysnuggle=getenv('USERPROFILE');
-load(strcat(mysnuggle,'\OneDrive\Zebrafish heart beat profile\2.4c extractedProfileFromMaxIntensityRegion.mat'));
+% load(strcat(mysnuggle,'\OneDrive\Zebrafish heart beat profile\2.4c extractedProfileFromMaxIntensityRegion.mat'));
+ profile = profile2;
+ clear beatFrequency;
+
 
 %define parameters of the signal for FFT
-sectionLength = 60;
+sectionLength = 9;
 Fs = 20;                        %sampling frequency
 T = 1/Fs;                       % sampling period
 L = sectionLength*Fs;       % Length of signal
@@ -30,7 +33,7 @@ for n =1:size(profile,1)
     P1(n,:) = P2(1:L/2+1);
     P1(n,2:end-1) = 2*P1(n,2:end-1);
     f = Fs*(0:(L/2))/L;
-    peaks = findpeaks(P1(n,20:end));
+    peaks = findpeaks(P1(n,10:40));
     beatFrequency(n) = f(find(P1(n,:)==max(peaks)));
     normP1 = P1/max(peaks);
     
@@ -39,7 +42,7 @@ end
 beatFrequency = beatFrequency';
 
 subplot(1,2,1)
-timeStamp = (1:size(beatFrequency,1))*sectionLength/60;
+timeStamp = (1:size(beatFrequency,1));%*sectionLength/60;
 plot(timeStamp,beatFrequency,'o')
 % hold on
 % beatFrequency0 = reshape(beatFrequency, [],3);
@@ -49,7 +52,7 @@ plot(timeStamp,beatFrequency,'o')
 % hold off
 ylim([0,6])
 
-for n =7%1:size(beatFrequency,1)
+for n =75%1:size(beatFrequency,1)
 %     n=116
 subplot(2,2,2)
 plot(profile(n,:))
