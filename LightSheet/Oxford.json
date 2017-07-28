@@ -1,0 +1,45 @@
+{
+	"excitation": {
+		"objective": {
+			"refractiveIndex": 1.33,
+			"numericalAperture": 0.3,
+			"magnification": 10,
+			"tubeLength": 0.18
+		},
+		"wavelength": 5.32e-07,
+		"power": 1e-05
+	},
+	"detection": {
+		"wavelength": 6e-07,
+		"objective": {
+			"refractiveIndex": 1.33,
+			"numericalAperture": 0.8,
+			"magnification": 40,
+			"tubeLength": 0.2
+		}
+	},
+	"sample": {
+		"fluorophore": {
+			"maxDensity": 6.022141793e+24,
+			"extinctionCoefficient": 4.981616347e-21,
+			"quantumYield": 0.79
+		},
+		"refractiveIndex": 1.33,
+		"signalLevel": 0.05,
+		"backgroundLevel": 0.01
+	},
+	"detector": {
+		"integrationTime": 0.002,
+		"quantumEfficiency": 0.55,
+		"darkCurrent": 200,
+		"readOutNoise": 16,
+		"wellDepth": 18000,
+		"numberOfGrayLevels": 256,
+		"pixelSize": [7.4e-06,7.4e-06],
+		"framesPerSecond": 1
+	},
+	"modulation": {
+		"alpha": 0,
+		"beta": 1
+	}
+}

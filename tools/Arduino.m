@@ -9,12 +9,13 @@ classdef Arduino < handle
     properties
         port;
         target;
+        temperature;
     end
     
     methods
         function board = Arduino(port)
             if nargin < 1
-                board.port = 'COM7';
+                board.port = 'COM17';
             else
                 board.port = port;
             end
@@ -46,9 +47,20 @@ classdef Arduino < handle
             fprintf(board.target,'D');
         end
         
+        function temperature = get.temperature(board)
+            fprintf(board.target,'T');
+            temString = fscanf(board.target);
+            temperature(1) = str2double(temString(1:5));
+            temperature(2) = str2double(temString(8:12));
+%             temperature(3) = str2double(temString(15:19));
+%             temperature(4) = str2double(temString(22:26));
+%             temperature(5) = str2double(temString(29:33));
+        end
+        
         function board = disconnect(board)
             fclose(board.target);
         end
+        
     end
     
 end

@@ -1,0 +1,2 @@
+2015-12-09 12:58:24.438| A minimum pupil size of (355,355) is required to handle the specified defocus.
+2015-12-09 12:58:24.439| Setting the pupil sampling grid size to (356,356)
