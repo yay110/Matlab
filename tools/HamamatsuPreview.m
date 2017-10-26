@@ -4,17 +4,58 @@ vid = videoinput('hamamatsu', 1, 'MONO16_BIN2x2_1024x1024_FastMode');
 %  vid = videoinput('hamamatsu', 1, 'MONO16_BIN4x4_512x512_FastMode');
 src = getselectedsource(vid);
 triggerconfig(vid,'manual');
+triggerconfig(vid,'hardware','RisingEdge','EdgeTrigger');
 
 % ROIPosition = [0 0 2048 2048];
 
 % vid.ROIPosition = ROIPosition;
 %src.ExposureTime = 0.01/2048*pixels; %in seconds
-src.ExposureTime = 0.1;
-vid.TriggerRepeat=10000;
+src.ExposureTime = 0.01;
+
+vid.TriggerRepeat=0;
 %     vid.FramesPerTrigger=1/scanningFrequency/src.ExposureTime*nrCycles;
-vid.FramesPerTrigger = 1;
+vid.FramesPerTrigger = 100;
 folderName = 'E:\01-31 PowerScannin with fluorescein';
 start(vid);
+delay(4);
+stop(vid);
+vid
+
+% delay(10)
+
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+frame = getdata(vid);
+size(frame)
+
+
+
+
+
 
 gca = figure(1);
 axis image;
