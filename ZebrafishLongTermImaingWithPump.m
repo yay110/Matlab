@@ -21,11 +21,11 @@ ROIPosition = [(2048-pixels)/2 (2048-pixels)/2 pixels pixels];
 
 
 %define number of stacks to take and
-nrStacks =16;               % numbers of image stacks to take, with the following
+nrStacks =60;               % numbers of image stacks to take, with the following
 % stackInterval to determine how long in total.
 stackInterval = 1;          % Unit minutes
 stackLength = 0.25;           %Unit minutes
-folderName = 'F:\2017-06-12 Verapaamil 5day old\sample 1\1. before drug';
+folderName = 'F:\2017-06-12 Verapaamil 5day old\sample 1\2. adding drug';
 
 
 %% pump / Arduino board initialization
